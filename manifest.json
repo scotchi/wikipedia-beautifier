@@ -1,0 +1,11 @@
+{
+  "name": "Wiknifier",
+  "version": "1.0",
+  "description": "Increases font sizes and rearranges layout to make wikipedia more readable",
+  "content_scripts": [
+      {
+          "matches": [ "http://en.wikipedia.org/*" ],
+          "js": [ "wiknifier.js" ]
+      }
+  ]
+}
