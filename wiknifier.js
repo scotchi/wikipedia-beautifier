@@ -27,20 +27,21 @@ function wiknifier()
             element.parentNode : parentDiv(element.parentNode);
     }
 
-    function paragraphAdjuster(elements)
+    function paragraphAdjuster(elements, margin)
     {
         for(var i = 0; i < elements.length; i++)
         {
             if(parentDiv(elements[i]) == bodyContent)
             {
-                elements[i].className += "hyphenate";
+                elements[i].className += (elements[i].className ? " " : "") + "hyphenate";
                 elements[i].style.textAlign = "justify";
+                elements[i].style.marginBottom = margin;
             }
         }
     }
 
-    paragraphAdjuster(bodyContent.getElementsByTagName("p"));
-    paragraphAdjuster(bodyContent.getElementsByTagName("li"));
+    paragraphAdjuster(bodyContent.getElementsByTagName("p"), "1.0em");
+    paragraphAdjuster(bodyContent.getElementsByTagName("li"), "0.5em");
 
     Hyphenator.run();
 
