@@ -21,6 +21,13 @@ function wiknifier()
     bodyContent.style.marginTop = "1em";
     bodyContent.style.background = "#fbfbfb";
 
+    var refLists = document.getElementsByClassName("reflist");
+
+    for(var i = 0; i < refLists.length; i++)
+    {
+        refLists[i].style["-webkit-column-width"] = "380px";
+    }
+
     var increment = 30;
 
     function fadeIn(element)
