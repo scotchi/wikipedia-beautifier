@@ -4,8 +4,9 @@
   "description": "Increases font sizes and rearranges layout to make wikipedia more readable",
   "content_scripts": [
       {
-          "matches": [ "http://en.wikipedia.org/*" ],
-          "js": [ "wiknifier.js" ]
+          "matches": [ "http://*.wikipedia.org/wiki/*" ],
+          "js": [ "hyphenator.js", "wiknifier.js" ],
+          "run_at": "document_end"
       }
   ]
 }

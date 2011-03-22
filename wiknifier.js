@@ -21,6 +21,29 @@ function wiknifier()
     bodyContent.style.marginTop = "1em";
     bodyContent.style.background = "#fbfbfb";
 
+    function parentDiv(element)
+    {
+        return (!element.parentNode || element.parentElement.tagName == "DIV") ?
+            element.parentNode : parentDiv(element.parentNode);
+    }
+
+    function paragraphAdjuster(elements)
+    {
+        for(var i = 0; i < elements.length; i++)
+        {
+            if(parentDiv(elements[i]) == bodyContent)
+            {
+                elements[i].className += "hyphenate";
+                elements[i].style.textAlign = "justify";
+            }
+        }
+    }
+
+    paragraphAdjuster(bodyContent.getElementsByTagName("p"));
+    paragraphAdjuster(bodyContent.getElementsByTagName("li"));
+
+    Hyphenator.run();
+
     var refLists = document.getElementsByClassName("reflist");
 
     for(var i = 0; i < refLists.length; i++)
@@ -83,4 +106,3 @@ function wiknifier()
 }
 
 wiknifier();
-
