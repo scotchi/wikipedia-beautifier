@@ -1,11 +1,11 @@
 {
-  "name": "Wiknifier",
+  "name": "Wikipedia Beautifier",
   "version": "1.0",
-  "description": "Increases font sizes and rearranges layout to make wikipedia more readable",
+  "description": "Beautifies Wikipedia text and layout to make articles more readable",
   "content_scripts": [
       {
           "matches": [ "http://*.wikipedia.org/wiki/*" ],
-          "js": [ "hyphenator.js", "wiknifier.js" ],
+          "js": [ "hyphenator.js", "wikipedia-beautifier.js" ],
           "run_at": "document_end"
       }
   ]
