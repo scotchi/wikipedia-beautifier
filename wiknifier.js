@@ -45,6 +45,20 @@ function wiknifier()
 
     Hyphenator.run();
 
+    var amboxes = document.getElementsByClassName("ambox");
+
+    for(var i = 0; i < amboxes.length; i++)
+    {
+        amboxes[i].style.margin = "1.5em 10%";
+    }
+
+    var infoboxes = document.getElementsByClassName("infobox");
+
+    if(infoboxes.length > 0)
+    {
+        infoboxes[0].style.marginTop = 0;
+    }
+
     var refLists = document.getElementsByClassName("reflist");
 
     for(var i = 0; i < refLists.length; i++)
