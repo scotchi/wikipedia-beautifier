@@ -4,7 +4,7 @@
   "description": "Beautifies Wikipedia text and layout to make articles more readable",
   "content_scripts": [
       {
-          "matches": [ "http://*.wikipedia.org/wiki/*", "https://secure.wikimedia.org/wikipedia/*" ],
+          "matches": [ "http://*.wikipedia.org/wiki/*", "https://secure.wikimedia.org/wikipedia/*/wiki/*" ],
           "js": [ "hyphenator.js", "wikipedia-beautifier.js" ],
           "run_at": "document_end"
       }
