@@ -52,11 +52,17 @@ function wiknifier()
         amboxes[i].style.margin = "1.5em 10%";
     }
 
-    var infoboxes = document.getElementsByClassName("infobox");
+    var boxClasses = [ "infobox", "tright", "tleft", "taxobox", "wikitable" ];
 
-    if(infoboxes.length > 0)
+    for(var i = 0; i < boxClasses.length; i++)
     {
-        infoboxes[0].style.marginTop = 0;
+        var boxes = document.getElementsByClassName(boxClasses[i]);
+
+        for(var j = 0; j < boxes.length; j++)
+        {
+            boxes[j].style.marginTop = 0;
+            boxes[j].style.marginBottom = "0.5em";
+        }
     }
 
     var refLists = document.getElementsByClassName("reflist");
