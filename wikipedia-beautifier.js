@@ -65,11 +65,11 @@ function wiknifier()
         }
     }
 
-    var refLists = document.getElementsByClassName("reflist");
+    var refs = document.getElementsByClassName("references-column-width");
 
-    for(var i = 0; i < refLists.length; i++)
+    for(var i = 0; i < refs.length; i++)
     {
-        refLists[i].style["-webkit-column-width"] = "380px";
+        refs[i].style["-webkit-column-width"] = "380px";
     }
 
     var increment = 30;
