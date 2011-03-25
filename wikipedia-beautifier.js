@@ -71,59 +71,6 @@ function wiknifier()
     {
         refs[i].style["-webkit-column-width"] = "380px";
     }
-
-    var increment = 30;
-
-    function fadeIn(element)
-    {
-        if(element.fadeTimeout)
-        {
-            clearTimeout(element.fadeTimeout);
-        }
-
-        if(parseFloat(element.style.opacity) < 1.0)
-        {
-            element.style.opacity =
-                Math.round(10 * Math.min(parseFloat(element.style.opacity) + 0.1, 1.0)) / 10;
-            element.fadeTimeout = setTimeout(function() { fadeIn(element) }, increment);
-        }
-    }
-
-    function fadeOut(element, limit)
-    {
-        if(element.fadeTimeout)
-        {
-            clearTimeout(element.fadeTimeout);
-        }
-
-        if(!limit)
-        {
-            limit = 0;
-        }
-
-        if(parseFloat(element.style.opacity) > limit)
-        {
-            element.style.opacity =
-                Math.round(10 * Math.max(parseFloat(element.style.opacity) - 0.1, limit)) / 10;
-            element.fadeTimeout = setTimeout(function() { fadeOut(element, limit) }, increment);
-        }
-    }
-
-    function fader(element)
-    {
-        var transparent = 0;
-
-        element.style.opacity = transparent;
-        element.onmouseover = function() {
-            fadeIn(element);
-        }
-        element.onmouseout = function() {
-            element.fadeTimeout = setTimeout(function() { fadeOut(element, transparent) }, 100);
-        }
-    }
-
-    fader(document.getElementById("mw-head"));
-    fader(document.getElementById("mw-panel"));
 }
 
 wiknifier();

@@ -1,0 +1,8 @@
+#mw-head, #mw-panel {
+    opacity: 0;
+    -webkit-transition: all 400ms ease-in-out;
+}
+
+#mw-head:hover, #mw-panel:hover {
+    opacity: 1;
+}
