@@ -20,7 +20,7 @@ function beautifier()
     function insertCSS(url)
     {
         var head = document.getElementsByTagName("head")[0];         
-        var css= document.createElement("link");
+        var css = document.createElement("link");
         css.type = "text/css";
         css.rel = "stylesheet";
         css.href = url;
