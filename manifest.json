@@ -1,6 +1,6 @@
 {
   "name": "Wikipedia Beautifier",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Beautifies Wikipedia text and layout to make articles more readable",
   "content_scripts": [
       {
