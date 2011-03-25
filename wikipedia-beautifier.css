@@ -60,3 +60,7 @@
 .ambox, table.ambox {
     margin: 1.5em 10%;
 }
+
+pre {
+    overflow: auto;
+}
