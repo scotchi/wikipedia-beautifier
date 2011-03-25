@@ -6,3 +6,40 @@
 #mw-head:hover, #mw-panel:hover {
     opacity: 1;
 }
+
+#firstHeading {
+    font-family: "minion-pro-1", "minion-pro-2", Palatino, Georgia, "Times New Roman", serif;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    border: none;
+    font-weight: bold;
+}
+
+
+#bodyContent {
+    line-height: 1.55em;
+    font-size: 1.0em;
+    font-family: "minion-pro-1", "minion-pro-2", Palatino, Georgia, "Times New Roman", serif;
+    border: 1px solid #ccc;
+    width: 800px;
+    padding: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    background: #fbfbfb;
+}
+
+.infobox,
+.tright, .tleft, div.tright, div.tleft,
+.taxobox, table.taxobox,
+.wikitable {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.ambox, table.ambox {
+    margin: 1.5em 10%;
+}

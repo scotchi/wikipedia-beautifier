@@ -1,25 +1,16 @@
-function wiknifier()
+function beautifier()
 {
-    var fonts = '"minion-pro-1", "minion-pro-2", Palatino, Georgia, "Times New Roman", serif';
+    function insertCSS(url)
+    {
+        var head = document.getElementsByTagName("head")[0];         
+        var css= document.createElement("link");
+        css.type = "text/css";
+        css.rel = "stylesheet";
+        css.href = url;
+        head.appendChild(css);
+    }
 
-    var firstHeading = document.getElementById("firstHeading");
-    firstHeading.style.fontFamily = fonts;
-    firstHeading.style.width = "900px";
-    firstHeading.style.marginLeft = firstHeading.style.marginRight = "auto";
-    firstHeading.style.paddingTop = firstHeading.style.paddingBottom = "0.25em";
-    firstHeading.style.border = "none";
-    firstHeading.style.fontWeight = "bold";
-
-    var bodyContent = document.getElementById("bodyContent");
-    bodyContent.style.lineHeight = "1.55em";
-    bodyContent.style.fontSize = "1.0em";
-    bodyContent.style.fontFamily = fonts;
-    bodyContent.style.border = "1px solid #ccc";
-    bodyContent.style.width = "800px";
-    bodyContent.style.padding = "50px";
-    bodyContent.style.marginLeft = bodyContent.style.marginRight = "auto";
-    bodyContent.style.marginTop = "1em";
-    bodyContent.style.background = "#fbfbfb";
+    insertCSS(chrome.extension.getURL("wikipedia-beautifier.css"));
 
     function parentDiv(element)
     {
@@ -45,26 +36,6 @@ function wiknifier()
 
     Hyphenator.run();
 
-    var amboxes = document.getElementsByClassName("ambox");
-
-    for(var i = 0; i < amboxes.length; i++)
-    {
-        amboxes[i].style.margin = "1.5em 10%";
-    }
-
-    var boxClasses = [ "infobox", "tright", "tleft", "taxobox", "wikitable" ];
-
-    for(var i = 0; i < boxClasses.length; i++)
-    {
-        var boxes = document.getElementsByClassName(boxClasses[i]);
-
-        for(var j = 0; j < boxes.length; j++)
-        {
-            boxes[j].style.marginTop = 0;
-            boxes[j].style.marginBottom = "0.5em";
-        }
-    }
-
     var refs = document.getElementsByClassName("references-column-width");
 
     for(var i = 0; i < refs.length; i++)
@@ -73,4 +44,4 @@ function wiknifier()
     }
 }
 
-wiknifier();
+beautifier();
