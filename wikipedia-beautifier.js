@@ -29,22 +29,13 @@ function beautifier()
 
     insertCSS(chrome.extension.getURL("wikipedia-beautifier.css"));
 
-    function parentDiv(element)
-    {
-        return (!element.parentNode || element.parentElement.tagName == "DIV") ?
-            element.parentNode : parentDiv(element.parentNode);
-    }
-
     function paragraphAdjuster(elements, margin)
     {
         for(var i = 0; i < elements.length; i++)
         {
-            if(parentDiv(elements[i]) == bodyContent)
-            {
-                elements[i].className += (elements[i].className ? " " : "") + "hyphenate";
-                elements[i].style.textAlign = "justify";
-                elements[i].style.marginBottom = margin;
-            }
+            elements[i].className += (elements[i].className ? " " : "") + "hyphenate";
+            elements[i].style.textAlign = "justify";
+            elements[i].style.marginBottom = margin;
         }
     }
 
