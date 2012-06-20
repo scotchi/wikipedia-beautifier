@@ -17,7 +17,7 @@
 
 #mw-head, #mw-panel {
     opacity: 0;
-    -webkit-transition: all 400ms ease-in-out;
+    -webkit-transition: all 400ms ease-in-out !important;
 }
 
 #mw-head:hover, #mw-panel:hover {
