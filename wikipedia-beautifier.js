@@ -34,8 +34,14 @@ function beautifier()
         for(var i = 0; i < elements.length; i++)
         {
             elements[i].className += (elements[i].className ? " " : "") + "hyphenate";
-            elements[i].style.textAlign = "justify";
             elements[i].style.marginBottom = margin;
+
+            var width = document.defaultView.getComputedStyle(elements[i]).width;
+
+            if(width.match(new RegExp("px$")) && parseInt(width) >= 300)
+            {
+                elements[i].style.textAlign = "justify";
+            }
         }
     }
 
